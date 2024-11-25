@@ -47,7 +47,7 @@ int main() {
     tm_full.stop();
     
     std::cout << "time working: " << tm_full.getTimeSec() << std::endl
-        << "average fps: " << full_frame_count / tm_full.getTimeSec() << " fraps" << std::endl
+        << "average fps: " << full_frame_count / tm_full.getTimeSec() << std::endl
         << "enter: " << (tm_enter.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << " " << std::endl
         << "morph: " << (tm_morph.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << " " << std::endl
         << "show: " << (tm_show.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << " " << std::endl;
