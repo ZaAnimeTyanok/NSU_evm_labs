@@ -25,16 +25,23 @@ long double pi_num_test(long long n) {
 
 
 int main() {
-    long double sm = 0;
+    long double min_time = 0;
 
     for (int i = 0; i < 10; i++) {
         long double time = pi_num_test(1800000000);
-        sm += time;
+
+        if (min_time) {
+            min_time = min(min_time, time);
+        }
+
+        else {
+            min_time = time;
+        }
 
         cout << i << ": " << time << endl;
     }
 
-    cout << "middle value: " << sm / 10 << endl;
+    cout << "min value: " << min_time << endl;
 
     return 0;
 
