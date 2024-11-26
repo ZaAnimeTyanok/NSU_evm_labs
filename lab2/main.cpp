@@ -47,6 +47,7 @@ int main() {
             
             if (min_time){
                 min_time = min(min_time, time);
+            
             }
             
             else {
@@ -54,21 +55,27 @@ int main() {
 
             }
 
+            
             print_pi = 0;
+
             sm += time;
 
             cout << i << ": " << time << endl;
         }
 
-        min_time = 0;
+        
 
-        cout << "min value: " << sm / test_count << endl;
+        cout << "min value: " << min_time << endl;
         sm = 0;
-
+        
+        min_time = 0;
+        
         cout << endl;
 
     }
 
-    return 0;
     
+
+    return 0;
+
 }
