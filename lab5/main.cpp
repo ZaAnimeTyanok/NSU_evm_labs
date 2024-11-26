@@ -5,11 +5,11 @@ int main() {
 
     cv::Mat myImage_orig;
     cv::Mat myImage;
-    cv::namedWindow("lab5_evm");
+    cv::namedWindow("evm_lab5");
     cv::VideoCapture cap(0);
 
     if (!cap.isOpened()) {
-        std::cout << "No video stream detected" << std::endl;
+        std::cout << "no video stream detected" << std::endl;
         return -1;
     
     }
@@ -48,9 +48,9 @@ int main() {
     
     std::cout << "time working: " << tm_full.getTimeSec() << std::endl
         << "average fps: " << full_frame_count / tm_full.getTimeSec() << std::endl
-        << "enter: " << (tm_enter.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << " " << std::endl
-        << "morph: " << (tm_morph.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << " " << std::endl
-        << "show: " << (tm_show.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << " " << std::endl;
+        << "enter: " << (tm_enter.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << std::endl
+        << "morph: " << (tm_morph.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << std::endl
+        << "show: " << (tm_show.getTimeSec() / (tm_full.getTimeSec() - tm_wait.getTimeSec()) * 100) << "%" << std::endl;
 
     cap.release();
 
