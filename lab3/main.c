@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 
 long double pi(long long n) {
     int sg = -1;
@@ -18,9 +18,10 @@ long double pi(long long n) {
 
 int main() {
     long long n;
-    std::cin >> n;
+    
+    if (scanf("%lld", &n));
 
-    std::cout << pi(n) << std::endl;
+    printf("%Lf", pi(n));
 
     return 0;
 
