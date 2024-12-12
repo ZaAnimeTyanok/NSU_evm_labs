@@ -1,0 +1,51 @@
+libusb: warning [enumerate_hcd_root_hub] could not infer VID/PID of HCD from 'ROOT\SYSTEM\0002'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\ROOT_HUB30\4&1DAB2574&0&0'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\VID_3277&PID_0045&MI_00\6&3764BAF2&0&0000'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\VID_30FA&PID_0400\5&1BD193C8&0&6'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\VID_10A5&PID_A900\5&1BD193C8&0&2'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\ROOT_HUB30\1&1A590E2C&1&0'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\ROOT_HUB30\4&1905F41C&0&0'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\VID_3277&PID_0045\0001'
+libusb: info [get_guid] no DeviceInterfaceGUID registered for 'USB\VID_8087&PID_0026\5&1BD193C8&0&10'
+Number of devices found: 8
+Device #1 info:
+        The device information could not be opened.
+        Most likely, it does not have a driver for interaction or its version is outdated.
+        Check the device driver and try again
+
+Device #2 info:
+libusb: warning [hid_open] could not open HID device in R/W mode (keyboard or mouse?) - trying without
+        Device class:              00
+        Product:                   USB Optical Mouse
+
+Device #3 info:
+libusb: error [winusbx_open] could not open device \\?\USB#VID_10A5&PID_A900#5&1BD193C8&0&2#{A5DCBF10-6530-11D2-901F-00C04FB951ED} (interface 0): [5] ╬Єърчрэю т фюёЄєях.
+        The device information could not be opened.
+        Most likely, it does not have a driver for interaction or its version is outdated.
+        Check the device driver and try again
+
+Device #4 info:
+        The device information could not be opened.
+        Most likely, it does not have a driver for interaction or its version is outdated.
+        Check the device driver and try again
+
+Device #5 info:
+        Device class:              00
+        Manufacturer:              Generic
+        Product:                   Mass Storage
+        Serial Number:             5850F2AB
+
+Device #6 info:
+        The device information could not be opened.
+        Most likely, it does not have a driver for interaction or its version is outdated.
+        Check the device driver and try again
+
+Device #7 info:
+        The device information could not be opened.
+        Most likely, it does not have a driver for interaction or its version is outdated.
+        Check the device driver and try again
+
+Device #8 info:
+        The device information could not be opened.
+        Most likely, it does not have a driver for interaction or its version is outdated.
+        Check the device driver and try again
