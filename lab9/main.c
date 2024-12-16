@@ -55,12 +55,12 @@ int main() {
 
     FILE* out = fopen("result.csv", "w");
 
-    fprintf(out, "fragments,tacts\n");
+    fprintf(out, "fragments;tacts\n");
 
     for (int n = 1; n <= 64; n++) {
         fill_array(arr, n, OFFSET_SIZE / sizeof(int), FRAGMENT_SIZE / sizeof(int));
 
-        fprintf(out, "%d,%llu\n", n, tacts(arr));
+        fprintf(out, "%d;%llu\n", n, tacts(arr));
     }
 
     fclose(out);
