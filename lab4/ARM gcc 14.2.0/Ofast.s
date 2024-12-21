@@ -57,7 +57,7 @@ main:
         movs    r4, #1
         movs    r5, #0
         mov     r6, #-1
-.L13:
+.L13:        // цикл встроен в тело мейна
         mov     r0, r4
         mov     r1, r5
         bl      __aeabi_l2d
