@@ -41,7 +41,7 @@ main:
         mov     eax, 1
         fld     st(0)
         mov     edx, -1
-.L9:        # цикл встроен в тело мейна
+.L9:                        # цикл встроен в тело мейна
         mov     DWORD PTR [rsp+8], edx
         fild    DWORD PTR [rsp+8]
         neg     edx
