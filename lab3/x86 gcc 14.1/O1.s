@@ -34,9 +34,9 @@ _printf:
 	.def	_pi;	.scl	2;	.type	32;	.endef
 _pi:
 	pushl	%ebp
-	pushl	%edi
+	pushl	%edi		# для хранения переменных используется больше регистров, чем в O0, это нужно для уменьшения количества обращений в память  
 	pushl	%esi
-	pushl	%ebx
+	pushl	%ebx 
 	subl	$20, %esp
 	movl	40(%esp), %edi
 	movl	44(%esp), %ebp
@@ -52,13 +52,13 @@ _pi:
 L7:
 	movl	%ebx, 4(%esp)
 	fildl	4(%esp)
-	movd	%eax, %xmm0
+	movd	%eax, %xmm0	# используется комманда MOVD из расширения SSE2, то есть компилятор использует SIMD интсрукции для оптимизации 
 	movd	%edx, %xmm1
-	punpckldq	%xmm1, %xmm0
+	punpckldq	%xmm1, %xmm0	# это так же комманда из SSE2
 	movq	%xmm0, 8(%esp)
 	fildq	8(%esp)
 	fadd	%st(0), %st
-	fadds	LC0
+	fadds	LC0		# чаще просиходит обращение к константам, то есть компилятор высчитывает некоторые значения еще во время компиляции
 	fdivrp	%st, %st(1)
 	faddp	%st, %st(1)
 	negl	%ebx
@@ -69,15 +69,15 @@ L7:
 	movl	%ebp, %esi
 	xorl	%edx, %esi
 	orl	%esi, %ecx
-	jne	L7
+	jne	L7		# отсутствует метка условия цикла, вместо этого происходит проверка регистров, то есть уменьшается количество обращений в память, что может значительно понижать время работы
 L6:
-	fmuls	LC1
+	fmuls	LC1		# еще одно обращение к константе
 	addl	$20, %esp
 	popl	%ebx
 	popl	%esi
 	popl	%edi
 	popl	%ebp
-	ret
+	ret			# вместо leave для очистки стека используются popl, вероятно, это менее затратно по времени
 L8:
 	fld1
 	jmp	L6
@@ -112,10 +112,10 @@ _main:
 	ret
 	.section .rdata,"dr"
 	.align 4
-LC0:
+LC0:			# метка с константой, представляет число с плавающей запятой 1.0f
 	.long	1065353216
 	.align 4
-LC1:
+LC1: 			# еще метка с константой, представляет число 4.0f
 	.long	1082130432
 	.def	___main;	.scl	2;	.type	32;	.endef
 	.ident	"GCC: (GNU) 14.1.0"
