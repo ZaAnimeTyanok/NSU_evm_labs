@@ -1,5 +1,5 @@
 pi:
-        push    {r4, r5, r6, r7, r8, lr}
+        push    {r4, r5, r6, r7, r8, lr}        // используется больше регистров
         vpush.64        {d8, d9, d10}
         cmp     r0, #2
         sbcs    r3, r1, #0
@@ -30,7 +30,7 @@ pi:
         cmp     r8, r3
         it      eq
         cmpeq   r7, r2
-        bne     .L3
+        bne     .L3        // цикл упрощен, нет метки проверки условия
 .L2:
         vmov.f64        d0, #4.0e+0
         vmul.f64        d0, d8, d0
